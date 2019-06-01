@@ -92,13 +92,13 @@ def parse_args():
     desc = "Tensorflow implementation of StarGAN"
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument('--phase', type=str, default='test', help='train or test ?')
-    parser.add_argument('--dataset', type=str, default='celeba', help='dataset_name')
+    parser.add_argument('--dataset', type=str, default='./data/CelebA', help='dataset_name')
     parser.add_argument('--ch', type=int, default=64, help='base channel number per layer')
     parser.add_argument('--n_res', type=int, default=6, help='The number of resblock')
     parser.add_argument('--img_size', type=int, default=256, help='The size of image')
     parser.add_argument('--img_ch', type=int, default=3, help='The size of image channel')
 
-    parser.add_argument('--checkpoint_dir', type=str, default='checkpoint',
+    parser.add_argument('--checkpoint_dir', type=str, default='./checkpoint/CelebA',
                         help='Directory name to save the checkpoints')
     parser.add_argument('--result_dir', type=str, default='results',
                         help='Directory name to save the generated images')

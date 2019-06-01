@@ -8,8 +8,26 @@ The training and testing codes will be released soon!
 1. We use [Miniconda3](https://conda.io/miniconda.html) for the basic environment. If you installed the Miniconda3 in path `Conda_Path`, please install `tensorflow-gpu` using the command `Conda_Path/bin/conda install -c anaconda tensorflow-gpu==1.8`.
 2. Install dependencies by `Conda_Path/bin/pip install -r requirements.txt` (if necessary). The `requirements.txt` file is provided in this package.
 
+## Train
+The training coding will be released soon!
+
+## Test
+### CelebA
+We have provided the pre-trained model and demo images for evaluating. Pretrained model([Goodle Drive](https://drive.google.com/open?id=17WP7YEU3u1lC-Fl09GulLgW8CSoGAGGB) and [Baidu Drive](https://pan.baidu.com/s/1y5raFPz5cManQqJ2DRk_9A)). And for the testing images used in our paper [test.zip](https://pan.baidu.com/s/19uzVZnHaBPA4Ko6e0IWbIg).
+After download the pre-trained model and testing images.
+```
+unzip celeba.zip
+mkdir -p checkpoint/CelebA
+mkdir -p data/Celeba
+mv celeba checkpoint/CelebA/pretrain
+unzip test.zip
+mv test/combination data/Celeba/combination
+Conda_path/bin/python main.py --dataset ./data/CelebA --checkpoint_dir ./checkpoint/CelebA --result_dir ./result/celeba
+```
+You could testing other demo images by replacing the input images using `get_new.py`
+
 ## Datasets
-Cross-species image-to-image translation datasets: 
+Reshaping datasets: 
 - KDEF
 - RaFD
 - FEI
