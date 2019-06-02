@@ -13,7 +13,7 @@ The training coding will be released soon!
 
 ## Test
 ### CelebA
-We have provided the pre-trained model and demo images for evaluating. Pretrained model([Goodle Drive](https://drive.google.com/open?id=17WP7YEU3u1lC-Fl09GulLgW8CSoGAGGB) and [Baidu Drive](https://pan.baidu.com/s/1y5raFPz5cManQqJ2DRk_9A)). And for the testing images used in our paper [test.zip](https://pan.baidu.com/s/19uzVZnHaBPA4Ko6e0IWbIg).
+We have provided the pre-trained model and demo images for evaluating. Pretrained model([Google Drive](https://drive.google.com/open?id=17WP7YEU3u1lC-Fl09GulLgW8CSoGAGGB) and [Baidu Drive](https://pan.baidu.com/s/1y5raFPz5cManQqJ2DRk_9A)). And for the testing images used in our paper test.zip([Google Drive](https://drive.google.com/open?id=1XGpbNROq3MsEQLv8FWWgs44XfPjAvFuP) and [Baidu Drive](https://pan.baidu.com/s/19uzVZnHaBPA4Ko6e0IWbIg)).
 After download the pre-trained model and testing images.
 ```
 unzip celeba.zip
@@ -21,10 +21,10 @@ mkdir -p checkpoint/CelebA
 mkdir -p data/Celeba
 mv celeba checkpoint/CelebA/pretrain
 unzip test.zip
-mv test/combination data/Celeba/combination
+mv test/combination data/CelebA/combination
 Conda_path/bin/python main.py --dataset ./data/CelebA --checkpoint_dir ./checkpoint/CelebA --result_dir ./result/celeba
 ```
-You could testing other demo images by replacing the input images using `get_new.py`
+You could testing other demo images by replacing the the first image of demo images with other input images. In theory, we can obtain 1000*1000 different images using 1000 images.
 
 ## Datasets
 Reshaping datasets: 
