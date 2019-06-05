@@ -69,7 +69,7 @@ Reshaping datasets:
        └── ... 
 ```
 
-### StarGAN
+### Reshaping by cross-domain guidance
 ```
 ├── demo
    ├── train
