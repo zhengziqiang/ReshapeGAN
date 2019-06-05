@@ -5,15 +5,17 @@ ReshapeGAN is a [Tensorflow](http://tensorflow.org/)-based framework for trainin
 The training and testing codes will be released soon!
 
 ## Installation
-1. We use [Miniconda3](https://conda.io/miniconda.html) for the basic environment. If you installed the Miniconda3 in path `Conda_Path`, please install `tensorflow-gpu` using the command `Conda_Path/bin/conda install -c anaconda tensorflow-gpu==1.8`.
+1. We use [Miniconda3](https://conda.io/miniconda.html) as the basic environment. If you installed the Miniconda3 in path `Conda_Path`, please install `tensorflow-gpu` using the command `Conda_Path/bin/conda install -c anaconda tensorflow-gpu==1.8`.
 2. Install dependencies by `Conda_Path/bin/pip install -r requirements.txt` (if necessary). The `requirements.txt` file is provided in this package.
 
 ## Train
-The training coding will be released soon!
+The training code will be released soon!
 
 ## Test
 ### CelebA
-We have provided the pre-trained model and demo images for evaluating. Pretrained model([Google Drive](https://drive.google.com/open?id=17WP7YEU3u1lC-Fl09GulLgW8CSoGAGGB) and [Baidu Drive](https://pan.baidu.com/s/1y5raFPz5cManQqJ2DRk_9A)). And for the testing images used in our paper test.zip([Google Drive](https://drive.google.com/open?id=1XGpbNROq3MsEQLv8FWWgs44XfPjAvFuP) and [Baidu Drive](https://pan.baidu.com/s/19uzVZnHaBPA4Ko6e0IWbIg)).
+We provide the pre-trained model and demo images for evaluation. 
+Pretrained model ([Google Drive](https://drive.google.com/open?id=17WP7YEU3u1lC-Fl09GulLgW8CSoGAGGB) and [Baidu Drive](https://pan.baidu.com/s/1y5raFPz5cManQqJ2DRk_9A)). 
+Testing images used in our paper: test.zip ([Google Drive](https://drive.google.com/open?id=1XGpbNROq3MsEQLv8FWWgs44XfPjAvFuP) and [Baidu Drive](https://pan.baidu.com/s/19uzVZnHaBPA4Ko6e0IWbIg)).
 After download the pre-trained model and testing images.
 ```
 unzip celeba.zip
@@ -24,7 +26,7 @@ unzip test.zip
 mv test/combination data/CelebA/combination
 Conda_path/bin/python main.py --dataset ./data/CelebA --checkpoint_dir ./checkpoint/CelebA --result_dir ./result/celeba
 ```
-You could testing other demo images by replacing the the first image of demo images with other input images. In theory, we can obtain 1000*1000 different images using 1000 images.
+You can test other demos by replacing the the first image of demo images with other input images. In theory, we can obtain 1000x1000 different images using 1000 images.
 
 ## Datasets
 Reshaping datasets: 
@@ -39,7 +41,7 @@ Reshaping datasets:
 - IIIT-CFW
 - PHOTO-SKETCH 
 - CUHK
-Face Sketch database 
+- Face Sketch database 
 
 ## Data preparation
 ### Reshaping by within-domain guidance with paired data
@@ -54,8 +56,7 @@ Face Sketch database
        ├── b.png
        └── ... 
 ```
-### Reshaping by within-domain guidance with unpaired
-data
+### Reshaping by within-domain guidance with unpaired data
 ```
 ├── demo
    ├── train
