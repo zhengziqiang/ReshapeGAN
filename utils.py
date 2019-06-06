@@ -3,7 +3,8 @@ import numpy as np
 import os
 from scipy import misc
 from scipy import io
-import argparse
+
+
 def load_test_data(image_path,n_critic, size=256):
     img = misc.imread(image_path, mode='RGB')
     img = misc.imresize(img, [size, size*(n_critic*2+1)])
@@ -88,28 +89,4 @@ def str2bool(x):
     return x.lower() in ('true')
 
 
-def parse_args():
-    desc = "Tensorflow implementation of StarGAN"
-    parser = argparse.ArgumentParser(description=desc)
-    parser.add_argument('--phase', type=str, default='test', help='train or test ?')
-    parser.add_argument('--dataset', type=str, default='./data/CelebA', help='dataset_name')
-    parser.add_argument('--ch', type=int, default=64, help='base channel number per layer')
-    parser.add_argument('--n_res', type=int, default=6, help='The number of resblock')
-    parser.add_argument('--img_size', type=int, default=256, help='The size of image')
-    parser.add_argument('--img_ch', type=int, default=3, help='The size of image channel')
-
-    parser.add_argument('--checkpoint_dir', type=str, default='./checkpoint/CelebA',
-                        help='Directory name to save the checkpoints')
-    parser.add_argument('--result_dir', type=str, default='results',
-                        help='Directory name to save the generated images')
-    return check_args(parser.parse_args())
-"""checking arguments"""
-
-
-def check_args(args):
-    # --checkpoint_dir
-    check_folder(args.checkpoint_dir)
-    # --result_dir
-    check_folder(args.result_dir)
-    return args
 

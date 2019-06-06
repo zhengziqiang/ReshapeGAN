@@ -1,5 +1,6 @@
 import tensorflow as tf
 import tensorflow.contrib as tf_contrib
+
 weight_init = tf_contrib.layers.xavier_initializer()
 weight_regularizer = None
 
@@ -46,9 +47,9 @@ def relu(x):
 
 def tanh(x):
     return tf.tanh(x)
+
 def instance_norm(x, scope='instance_norm'):
     return tf_contrib.layers.instance_norm(x,
                                            epsilon=1e-05,
                                            center=True, scale=True,
                                            scope=scope)
-
