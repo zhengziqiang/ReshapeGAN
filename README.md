@@ -32,8 +32,8 @@ cd ../..
 Then we provide two files: `test_single.py` and `test_multiple.py` for generating only one image and multiple images respectively. For generating one image:
 ```
 Conda_path/bin/python test_single.py # generating one image at once
---input_img ./data/celeba/celeba_images/0000.jpg # input image
---ref_img ./data/celeba/celeba_images/0001.jpg # reference image
+--input_img ./data/celeba/celeba_images/0000.jpg # input image, you could also change this to any input image (0001.jpg, 0002.jpg and etc)
+--ref_img ./data/celeba/celeba_images/0001.jpg # reference image, you could also change this to any reference image (0001.jpg, 0002.jpg and etc)
 --checkpoint_dir ./checkpoint/celeba # checkpoint path
 --result_img ./demo_celeba.jpg # result image
 ```
@@ -49,6 +49,13 @@ Conda_path/bin/python test_multiple.py
 --checkpoint_dir ./checkpoint/celeba # checkpoint path
 --result_dir ./result/celeba  # result path
 ```
+To make it easier to show the synthesized images, we also provide the `merge_result.py` to merge the generated images to a larger image.
+```
+Conda_path/bin/python merge_results.py
+--data_path ./result/celeba # the results path
+--save_path ./result/celeba/merge # the path to save merged images. 
+```
+We merge 96 synthesized images to a large image, and the middle enlarged image is the input image.
 
 ### UTKFace
 We provide the pre-trained model and 1000 testing images for evaluation. 
@@ -71,8 +78,8 @@ cd ../..
 Similarly, for generating one image:
 ```
 Conda_path/bin/python test_single.py # generating one image at once
---input_img ./data/utk/utk_images/0000.jpg # input image
---ref_img ./data/utk/utk_images/0001.jpg # reference image
+--input_img ./data/utk/utk_images/0000.jpg # input image, you could also change this to any input image (0001.jpg, 0002.jpg and etc)
+--ref_img ./data/utk/utk_images/0001.jpg # reference image, you could also change this to any reference image (0001.jpg, 0002.jpg and etc)
 --checkpoint_dir ./checkpoint/utk # checkpoint path
 --result_img ./demo_utk.jpg # result image
 ```
@@ -88,7 +95,13 @@ Conda_path/bin/python test_multiple.py
 --checkpoint_dir ./checkpoint/utk # checkpoint path
 --result_dir ./result/utk  # result path
 ```
-
+To make it easier to show the synthesized images, we also provide the `merge_result.py` to merge the generated images to a larger image.
+```
+Conda_path/bin/python merge_results.py
+--data_path ./result/utk # the results path
+--save_path ./result/utk/merge # the path to save merged images. 
+```
+We merge 96 synthesized images to a large image, and the middle enlarged image is the input image.
 
 ## Datasets
 Reshaping datasets: 
