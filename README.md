@@ -1,9 +1,9 @@
 
 ## Introduction
-ReshapeGAN is a [Tensorflow](http://tensorflow.org/)-based framework for training and testing of **[ReshapeGAN: Object Reshaping by Providing A Single Reference Image](https://arxiv.org/pdf/1905.06514.pdf)**
+ReshapeGAN is a [Tensorflow](http://tensorflow.org/)-based framework for training and testing of our paper **[ReshapeGAN: Object Reshaping by Providing A Single Reference Image](https://arxiv.org/pdf/1905.06514.pdf)**.
 
 ## Installation
-1. We use [Miniconda3](https://conda.io/miniconda.html) as the basic environment. If you installed the Miniconda3 in path `Conda_Path`, please install `tensorflow-gpu` using the command `Conda_Path/bin/conda install -c anaconda tensorflow-gpu==1.8`.
+1. We use [Miniconda3](https://conda.io/miniconda.html) as the basic environment. If you have installed the Miniconda3 in path `Conda_Path`, please install `tensorflow-gpu` using the command `Conda_Path/bin/conda install -c anaconda tensorflow-gpu==1.8`.
 2. Install dependencies by `Conda_Path/bin/pip install -r requirements.txt` (if necessary). The `requirements.txt` file is provided in this package.
 
 ## Train
@@ -13,8 +13,9 @@ The training code will be released soon!
 ### CelebA
 We provide the pre-trained model and 1000 testing images for evaluation. 
 Pre-trained model celeba.zip ([Google Drive](https://drive.google.com/open?id=17WP7YEU3u1lC-Fl09GulLgW8CSoGAGGB) and [Baidu Drive](https://pan.baidu.com/s/1y5raFPz5cManQqJ2DRk_9A)). 
-Testing images used in our paper: celeba_images.zip.
-After download the pre-trained model and testing images.
+Testing images used in our paper: `celeba_images.zip`.
+
+After download the pre-trained model and testing images, run
 ```
 mkdir checkpoint
 mv celeba.zip checkpoint/
@@ -27,7 +28,8 @@ cd data/celeba
 unzip celeba_images.zip
 cd ../..
 ```
-Then we provide two files: test_single.py and test_multiple.py for generating only one image and multiple images at once. For generating one image:
+
+Then we provide two files: `test_single.py` and `test_multiple.py` for generating only one image and multiple images respectively. For generating one image:
 ```
 Conda_path/bin/python test_single.py # generating one image at once
 --input_img ./data/celeba/celeba_images/0000.jpg # input image
@@ -35,7 +37,7 @@ Conda_path/bin/python test_single.py # generating one image at once
 --checkpoint_dir ./checkpoint/celeba # checkpoint path
 --result_img ./demo_celeba.jpg # result image
 ```
-For generating multiple images using different ref images at once.
+For generating multiple images using different reference images:
 ```
 Conda_path/bin/python generate_multiple.py # generate combinations of reference images, one combination has 5 different reference images, and we randomly use one image as input image.
 --data_path ./data/celeba/celeba_images # images path for providing reference images
@@ -49,8 +51,11 @@ Conda_path/bin/python test_multiple.py
 ```
 
 ### UTKFace
-We provide the pre-trained model and 1000 testing images for evaluation. Pre-trained model utk.zip ([Google Drive](https://drive.google.com/open?id=1QMqpzXdDT7O1uKhvIfkMoDeDCoiOwz9V) and [Baidu Drive](https://pan.baidu.com/s/1f9UiOhlHdr9oSkbNAuZmgg)).
-Testing images used in our paper: utk_images.zip.
+We provide the pre-trained model and 1000 testing images for evaluation. 
+Pre-trained model utk.zip ([Google Drive](https://drive.google.com/open?id=1QMqpzXdDT7O1uKhvIfkMoDeDCoiOwz9V) and [Baidu Drive](https://pan.baidu.com/s/1f9UiOhlHdr9oSkbNAuZmgg)).
+Testing images used in our paper: `utk_images.zip`.
+
+After download the pre-trained model and testing images, run
 ```
 mv utk.zip checkpoint/
 cd checkpoint/
@@ -62,7 +67,8 @@ cd data/utk
 unzip utk_images.zip
 cd ../..
 ```
-Then following the similar instructions with evaluating the face images on CelebA dataset.
+
+Similarly, for generating one image:
 ```
 Conda_path/bin/python test_single.py # generating one image at once
 --input_img ./data/utk/utk_images/0000.jpg # input image
@@ -70,7 +76,7 @@ Conda_path/bin/python test_single.py # generating one image at once
 --checkpoint_dir ./checkpoint/utk # checkpoint path
 --result_img ./demo_utk.jpg # result image
 ```
-For generating multiple images using different ref images at once.
+For generating multiple images using different reference images:
 ```
 Conda_path/bin/python generate_multiple.py # generate combinations of reference images, one combination has 5 different reference images, and we randomly use one image as input image.
 --data_path ./data/utk/utk_images # images path for providing reference images
@@ -125,7 +131,7 @@ Reshaping datasets:
        └── ... 
 ```
 
-### Reshaping by cross-domain guidance
+### Reshaping by cross-domain guidance with unparied data
 ```
 ├── demo
    ├── train
@@ -189,7 +195,6 @@ Codes will be released soon!
 </div>
 
 
-
 ### UTK
 #### Random 96 generated results by our ReshapeGAN from one input sample on UTKFace dataset. The middle enlarged image shows the input.
 <div style="text-align: center" />
@@ -207,5 +212,3 @@ Codes will be released soon!
 <div style="text-align: center" />
 <img src="./figures/pose.jpg" style="max-width: 500px" />
 </div>
-
-
