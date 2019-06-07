@@ -103,6 +103,17 @@ Conda_path/bin/python merge_results.py
 ```
 We merge 96 synthesized images to a large image, and the middle enlarged image is the input image.
 
+## Data preparation
+If you want to test your own images or train your model, you can use `extract_landmark.py` to get facial landmark of face images. We use [dlib](https://github.com/davisking/dlib) to obtain the 68 facial landmarks. You should follow the instructions to install dlib.
+```bash
+python extract_landmark.py # the python path should be the path you installed dlib
+--data_path # the real RGB path
+--save_path # path to save landmark images
+--model_path # the predictor path mentioned in dlib, default is shape_predictor_68_face_landmarks.dat
+```
+After extracting the landmarks, we also provide a post-processing code `facial_normalized.py` to get center cropped image.
+
+For the skeleton or pose extraction, we use [Openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) to obtain skeleton image. Or you can use [Densepose](https://github.com/facebookresearch/DensePose), which maybe helps a better performance for our task. 
 ## Datasets
 Reshaping datasets: 
 - KDEF
