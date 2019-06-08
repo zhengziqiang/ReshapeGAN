@@ -24,7 +24,7 @@ def main():
     save_path=args.save_path
     model_path=args.model_path
     landmark_predictor = dlib.shape_predictor(model_path)
-    for files in glob.glob(os.path.join(data_path,"/*.jpg")):
+    for files in glob.glob(os.path.join(data_path,"*.jpg")):
         p,n=os.path.split(files)
         img = cv2.imread(files)
         faces = detector(img,1)
