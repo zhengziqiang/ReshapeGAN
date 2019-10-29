@@ -2,6 +2,14 @@
 ## Introduction
 ReshapeGAN is a [Tensorflow](http://tensorflow.org/)-based framework for training and testing of our paper **[ReshapeGAN: Object Reshaping by Providing A Single Reference Image](https://arxiv.org/pdf/1905.06514.pdf)**.
 
+## Note
+We updated this version and achieve the high-resolution image-to-image translation on CelebA-HQ and FFHQ dataset for both 1024\*1024 and 512\*512. Besides, we also add the triplet loss to better preserve the identity information. And we will release the pre-trained model soon.
+here are some visual results.
+
+<div style="text-align: center" />
+<img src="./figures/1024.jpg" style="max-width: 500px" />
+</div>
+
 ## Installation
 1. We use [Miniconda3](https://conda.io/miniconda.html) as the basic environment. If you have installed the Miniconda3 in path `Conda_Path`, please install `tensorflow-gpu` using the command `Conda_Path/bin/conda install -c anaconda tensorflow-gpu==1.8`.
 2. Install dependencies by `Conda_Path/bin/pip install -r requirements.txt` (if necessary). The `requirements.txt` file is provided in this package.
